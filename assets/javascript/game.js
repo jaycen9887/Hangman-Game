@@ -3,6 +3,7 @@ var winCount = document.getElementById("wins");
 var images = document.getElementById("currentImage");
 var guessesRemaining = document.getElementById("guessesRemain");
 var lettersGuessed = document.getElementById("lettersGuessed");
+var img = document.getElementById("currentImage");
 
 var wins = 0;
 var guesses = 12;
@@ -15,14 +16,16 @@ var correct = 0;
 var remain;
 
 
-var words = ["Darkwing Duck", "Tiny Toons", "Animaniacs", "Rugrats", "Gargoyles", "Doug", "X-Men", "Pinky and the Brain", "Dexter's Laboratory", "TaleSpin", "Pokemon", "Earthworm Jim", "DuckTales", "Teenage Mutant Ninja Turtles", "Garfield and Friends", "Daria", "Hey Arnold!", "Johnny Bravo", "Goof Troop", "Captain Planet and the Planeteers", "The Magic School Bus", "Taz-Mania", "The Powerpuff Girls", "Beetlejuice", "Bobby's World", "Spider-Man", "Scooby Doo", "Street Sharks", "Freakazoid!", "Mighty Ducks", "Chip 'n Dale: Rescue Rangers", "Rocko's Modern Life", "The Tick", "Pepper Ann", "Courage the Cowardly Dog", "Inspector Gadget", "Aaahh!!! Real Monsters", "Arthur", "CatDog", "Cow and Chicken", "Recess", "ThunderCats", "Marsupilami", "Ed, Edd, n Eddy", "The Angry Beavers", "The Smurfs", "The Ren & Stimpy Show", "Muppet Babies", "SpongeBob SquarePants", "Alvin and the Chipmunks", "Rocket Power", "The Wild Thornberrys", "The Flintstones", "The Jetsons", "The Bugs Bunny Show", "Looney Tunes", "Biker Mice from Mars", "Beavis and Butt-Head"];
+var words = [["Darkwing Duck", "/assets/images/Darkwing.png"], ["Tiny Toons", "/assets/images/tinytoons.jpg"], ["Animaniacs", "/assets/images/animaniacs.png"], ["Rugrats", "/assets/images/rugrats.jpg"], ["Gargoyles", "/assets/images/gargoyles.jpg" ], ["Doug", "/assets/images/Doug.gif"], ["X-Men", "/assets/images/xmen.jpg"], ["Pinky and the Brain", "/assets/images/pinkyandthebrain.jpg"], ["Dexter's Laboratory", "/assets/images/dexterslab.jpg"], ["TaleSpin", "/assets/images/talespin.jpg"], ["Pokemon", "/assets/images/pokemon.jpg"], ["Earthworm Jim", "/assets/images/earthwormjim.jpg"], ["DuckTales", "/assets/images/ducktales.jpg"], ["Teenage Mutant Ninja Turtles", "/assets/images/tmnt.gif"], ["Garfield and Friends", "/assets/images/GarfieldandFriends.jpg"], ["Daria", "/assets/images/daria.jpg"], ["Hey Arnold!", "/assets/images/HeyArnold.jpg"], ["Johnny Bravo", "/assets/images/johnnybravo.png"], ["Goof Troop", "/assets/images/gooftroop.gif"], ["Captain Planet and the Planeteers", "/assets/images/captainplanetandtheplaneteers.jpg"], ["The Magic School Bus", "/assets/images/magicschoolbus.jpg"], ["Taz-Mania", "/assets/images/tazmania.jpg"], ["The Powerpuff Girls", "/assets/images/powerpuffgirls.png"], ["Beetlejuice", "/assets/images/beetlejuice.png"], ["Bobby's World", "/assets/images/Bobbysworld.png"], ["Spider-Man", "/assets/images/Spiderman.jpg"], ["Scooby Doo", "/assets/images/scoobydoo.jpg"], ["Street Sharks", "/assets/images/streetsharks.jpg"], ["Freakazoid!", "/assets/images/freakazoid.png"], ["Mighty Ducks", "/assets/images/mightyducks.jpg"], ["Chip 'n Dale", "/assets/images/chipanddale.jpg"], ["Rocko's Modern Life", "/assets/images/rockosmodernlife.jpg"], ["The Tick", "/assets/images/thetick.jpg"], ["Pepper Ann", "/assets/images/pepperann.jpg"], ["Courage the Cowardly Dog", "/assets/images/courage.jpg"], ["Inspector Gadget", "/assets/images/inspectorgadget.jpg"], ["Aaahh!!! Real Monsters", "/assets/images/aaahhrealmonsters.png"], ["Arthur", "/assets/images/arthur.jpg"], ["CatDog", "/assets/images/catdog.jpg"], ["Cow and Chicken", "/assets/images/CowandChicken.gif"], ["Recess", "/assets/images/recess.jpg"], ["ThunderCats", "/assets/images/thundercats.png"], ["Marsupilami", "/assets/images/marsupilami.png"], ["Ed, Edd, n Eddy", "/assets/images/ededdandeddy.jpg"], ["The Angry Beavers", 
+"/assets/images/angrybeavers.jpg"], ["The Smurfs", "/assets/images/smurfs.jpg"], ["The Ren & Stimpy Show", "/assets/images/renandstimpy.jpg"], ["Muppet Babies", "/assets/images/muppetbabies.jpg"], ["SpongeBob SquarePants", "/assets/images/spongebob.jpb"], ["Alvin and the Chipmunks", "/assets/images/alvinandthechipmunks.jpg"], ["Rocket Power", "/assets/images/rocketpower.jpeg"], ["The Wild Thornberrys", "/assets/images/wildthornberries.jpg"], ["The Flintstones", "/assets/images/flintsones.jpg"], ["The Jetsons", "/assets/images/jetsons.jpg"], ["Bugs Bunny", "/assets/images/bugsbunny.gif"], ["Looney Tunes", "/assets/images/looneytunes.jpg"], ["Biker Mice from Mars","/assets/images/bikermicefrommars.jpg"], ["Beavis and Butt-Head","/assets/images/beavisandbutthead.gif"]];
 
 var randomWord = function() {
     var max = words.length;
     
     var n = Math.floor(Math.random() * (max - 0)) + 0;
     
-    return words[n];
+    img.src = words[n][1];
+    return words[n][0];
     
 };
 
