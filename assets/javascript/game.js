@@ -25,7 +25,7 @@ var randomWord = function() {
     var n = Math.floor(Math.random() * (max - 0)) + 0;
     
     img.src = words[n][1];
-    return words[n][0];
+    return words[n][0].toLowerCase();
     
 };
 
@@ -116,13 +116,15 @@ document.onkeyup = function (event){
     if(guesses > 0) {
     
         if (key.length === 1 && key.match(/[a-z]/i)) {
-            guesses--;
-            guessesRemaining.textContent = guesses;
+            
             if (!letters.includes(key)){
                 letters += (" " + key);
                 lettersGuessed.textContent = letters;
                 check(currentWord, key);
-                guessing(currentWord, letters);
+                guessing(currentWord, key);
+                
+                guesses--;
+                guessesRemaining.textContent = guesses;
             }
 
         } else {

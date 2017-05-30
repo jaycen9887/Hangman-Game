@@ -9,6 +9,7 @@ body {
     width: 90%;
     margin: auto;
     margin-bottom: 20px;
+    margin-top: 50px;
 }
 
 header {
@@ -33,14 +34,14 @@ header {
 }
 
 #hint {
-   border-right: 8px double #000;   
+   border-right: 4px double #000;   
     height: 465px;
-    padding: 70px 10px 10px 10px;
+    padding: 40px 10px 10px 10px;
 }
 
 .content {
     height: 95px;
-    border-bottom: 4px double #000;
+    /*border-bottom: 4px double #000;*/
     padding: 10px;
     padding-top: 20px;
 }
