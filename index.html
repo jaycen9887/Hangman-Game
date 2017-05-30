@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Hangman </title>
+        
+        <!-- Bootstrap: Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+        
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Changa:200" rel="stylesheet">
+        
+    </head>
+    
+    <body>
+        
+        <header class="jumbotron borders">90's Cartoons</header>
+        <div class="container">
+            <div class="row" id="mainContent">
+                <div class="col-md-6" id="hint">
+                    <p>Hint: </p>
+                    <span id="currentImage">
+                        <img src="http://placehold.it/350x350">
+                    </span>
+                    
+                </div>
+                <div class="col-md-6" id="info">
+                    <div class="row">
+                        <div class="col-md-12 content">
+                            <p>Press any key to begin</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 content">
+                            <p>Wins:</p>
+                            <span id="wins"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 content">
+                            <p>Current Word:</p>
+                            <span id="currentWord"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 content">
+                            <p>Number of guesses remaining:</p>
+                            <span id="guessesRemain">12</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 lastContent">
+                            <p>Letters already guessed</p>
+                            <span id="lettersGuessed">  </span>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            </div> <!-- END ROW -->
+        </div>
+        
+        
+        
+        <script src="assets/javascript/game.js"></script>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+body {
+   font-family: 'Changa', sans-serif; 
+}
+
+.jumbotron {
+    background-color: black;
+    color: white;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+header {
+    font-size: 60px;
+    text-align: center;
+    font-family: 'Changa', sans-serif;
+    margin: 10px 10px 0 10px;
+    padding: 5px;
+    border: 8px double #CCC;
+}
+
+
+
+.container { 
+    width: 90%;
+    text-align: center;
+    border: 8px double #CCC;
+    height: 500px;
+    background-color: black;
+    color: white;
+
+}
+
+#hint {
+   border-right: 8px double #CCC;   
+    height: 485px;
+    padding: 70px 10px 10px 10px;
+}
+
+.content {
+    height: 95px;
+    border-bottom: 4px double #ccc;
+    padding: 10px;
+    padding-top: 20px;
+}
+
+.lastContent {
+    height: 95px;
+    padding: 20px 10px 10px 10px;
+}
+
+#currentWord {
+    text-align: center;
+    margin-left: 30px;
+}
