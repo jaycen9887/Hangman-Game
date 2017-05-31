@@ -9,12 +9,14 @@ var wins = 0;
 var winner = false;
 var guesses = 15;
 
+var currentWord
 var letters = "";
 var key;
 var dashed = "";
 var temp;
 var correct = 0;
 var remain, indices = [];
+var temp = "";
 
 
 var words = [["Darkwing Duck", "/assets/images/Darkwing.png"], ["Tiny Toons", "/assets/images/tinytoons.jpg"], ["Animaniacs", "/assets/images/animaniacs.png"], ["Rugrats", "/assets/images/rugrats.jpg"], ["Gargoyles", "/assets/images/gargoyles.jpg" ], ["Doug", "/assets/images/Doug.gif"], ["XMen", "/assets/images/xmen.jpg"], ["Pinky and the Brain", "/assets/images/pinkyandthebrain.jpg"], ["Dexters Laboratory", "/assets/images/dexterslab.jpg"], ["TaleSpin", "/assets/images/talespin.jpg"], ["Pokemon", "/assets/images/pokemon.jpg"], ["Earthworm Jim", "/assets/images/earthwormjim.jpg"], ["DuckTales", "/assets/images/ducktales.jpg"], ["Teenage Mutant Ninja Turtles", "/assets/images/tmnt.gif"], ["Garfield and Friends", "/assets/images/GarfieldandFriends.jpg"], ["Daria", "/assets/images/daria.jpg"], ["Hey Arnold!", "/assets/images/HeyArnold.jpg"], ["Johnny Bravo", "/assets/images/johnnybravo.png"], ["Goof Troop", "/assets/images/gooftroop.gif"], ["Captain Planet and the Planeteers", "/assets/images/captainplanetandtheplaneteers.jpg"], ["The Magic School Bus", "/assets/images/magicschoolbus.jpg"], ["Taz Mania", "/assets/images/tazmania.jpg"], ["The Powerpuff Girls", "/assets/images/powerpuffgirls.png"], ["Beetlejuice", "/assets/images/beetlejuice.png"], ["Bobbys World", "/assets/images/Bobbysworld.png"], ["Spiderman", "/assets/images/Spiderman.jpg"], ["Scooby Doo", "/assets/images/scoobydoo.jpg"], ["Street Sharks", "/assets/images/streetsharks.jpg"], ["Freakazoid", "/assets/images/freakazoid.png"], ["Mighty Ducks", "/assets/images/mightyducks.jpg"], ["Chip n Dale", "/assets/images/chipanddale.jpg"], ["Rockos Modern Life", "/assets/images/rockosmodernlife.jpg"], ["The Tick", "/assets/images/thetick.jpg"], ["Pepper Ann", "/assets/images/pepperann.jpg"], ["Courage the Cowardly Dog", "/assets/images/courage.jpg"], ["Inspector Gadget", "/assets/images/inspectorgadget.jpg"], ["Aaahh Real Monsters", "/assets/images/aaahhrealmonsters.png"], ["Arthur", "/assets/images/arthur.jpg"], ["CatDog", "/assets/images/catdog.jpg"], ["Cow and Chicken", "/assets/images/CowandChicken.gif"], ["Recess", "/assets/images/recess.jpg"], ["ThunderCats", "/assets/images/thundercats.png"], ["Marsupilami", "/assets/images/marsupilami.png"], ["Ed Edd n Eddy", "/assets/images/ededdandeddy.jpg"], ["The Angry Beavers", 
@@ -165,6 +167,25 @@ document.onkeyup = function (event){
         wordPlaceHolder.textContent = dashed;
         winCount.textContent = wins;
         
+        if (winner) {
+            temp = currentWord;
+            winner = false;
+            guesses = 15;
+            correct = 0;
+            indices = [];
+            currentWord = "";
+            dashed = "";
+            letters = "";
+            lettersGuessed.textContent = letters;
+            guessesRemaining.textContent = guesses;
+            
+            
+            
+            playGame();
+            if (currentWord == temp) {
+                playGame();
+            }
+        }
         
     }
     
@@ -172,8 +193,9 @@ document.onkeyup = function (event){
 
 
 
-
-var currentWord = randomWord();
+var playGame = function () {
+    
+ currentWord = randomWord();
 
 console.log(currentWord);
 
@@ -185,11 +207,11 @@ remain = letterCount - correct;
 
 wordPlaceHolder.textContent = dashed;
 
+};
 
 
 
-
-
+playGame();
 
 
 
