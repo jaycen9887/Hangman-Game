@@ -168,25 +168,27 @@ document.onkeyup = function (event){
         winCount.textContent = wins;
         
         if (winner) {
-            temp = currentWord;
-            winner = false;
-            guesses = 15;
-            correct = 0;
-            indices = [];
-            currentWord = "";
-            dashed = "";
-            letters = "";
-            lettersGuessed.textContent = letters;
-            guessesRemaining.textContent = guesses;
+            var playAgain = confirm("You won! \nContinue Playing?");
             
-            
-            
-            playGame();
-            if (currentWord == temp) {
+            if(playAgain){
+                resetGame();
                 playGame();
+                if (currentWord == temp) {
+                    playGame();
+                }
             }
+            
         }
         
+    }else {
+        var playAgain = confirm("Out of Guesses! \nPlay again?");
+        
+        if (playAgain) {
+            resetGame();
+            playGame();
+        }else {
+            alert("Thank You For Playing");
+        }
     }
     
 };
@@ -195,7 +197,7 @@ document.onkeyup = function (event){
 
 var playGame = function () {
     
- currentWord = randomWord();
+currentWord = randomWord();
 
 console.log(currentWord);
 
@@ -210,10 +212,21 @@ wordPlaceHolder.textContent = dashed;
 };
 
 
-
 playGame();
 
 
+var resetGame = function() {
+    temp = currentWord;
+    winner = false;
+    guesses = 15;
+    correct = 0;
+    indices = [];
+    currentWord = "";
+    dashed = "";
+    letters = "";
+    lettersGuessed.textContent = letters;
+    guessesRemaining.textContent = guesses;    
+}
 
 
 
