@@ -53,8 +53,8 @@ header {
 
 #currentWord {
     text-align: center;
-    margin-left: 30px;
     font-weight: bolder;
+    letter-spacing: 2px;
 }
 
 #mainContent img {
