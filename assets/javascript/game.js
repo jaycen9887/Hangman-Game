@@ -161,6 +161,8 @@ var continuePlay = function() {
                 }
             }
             
+        }else {
+            alert("Thank You For Playing");
         }
         
     
