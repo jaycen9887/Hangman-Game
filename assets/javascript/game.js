@@ -159,10 +159,11 @@ var continuePlay = function() {
                 if (currentWord == temp) {
                     playGame();
                 }
-            }
+            }else {
+                alert("Thank You For Playing");
+                winner = false;
+        }
             
-        }else {
-            alert("Thank You For Playing");
         }
         
     
